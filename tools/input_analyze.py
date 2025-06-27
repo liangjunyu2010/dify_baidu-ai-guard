@@ -58,7 +58,7 @@ class BaiduAiSecurityTool(Tool):
         headers['authorization'] = result
 
         # 拼接接口的url地址
-        url = 'http://%s%s' % (headers['host'], input_path)
+        url = 'https://%s%s' % (headers['host'], input_path)
         response = requests.post(url=url, params=params, headers=headers, json=body, timeout=5000)
         response.raise_for_status()
         resp = response.json()
